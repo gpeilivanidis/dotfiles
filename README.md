@@ -1,2 +1,2 @@
 # dotfiles
-my dotfiles for i3
+dotfiles for i3
