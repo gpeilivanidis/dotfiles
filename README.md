@@ -1,2 +1,2 @@
 # dotfiles
-dotfiles for i3
+dotfiles for my system
