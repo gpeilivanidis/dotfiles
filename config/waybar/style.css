@@ -1,0 +1,115 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: JetBrains Mono;
+    font-size: 16px;
+    padding: 2px 0;
+}
+
+window#waybar {
+    background-color: #1a1a1a;
+    color: #ccc;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/*
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+
+window#waybar.chromium {
+    background-color: #000000;
+    border: none;
+}
+
+#workspaces button {
+    padding: 0 0px;
+    background-color: #1a1a1a;
+    color: #808080;
+    border: none;
+    box-shadow: none;
+}
+
+#workspaces button:hover {
+    background: #1a1a1a;
+    color: #808080;
+    border: none;
+    box-shadow: none;
+}
+
+#workspaces button.focused {
+    color: white;
+}
+
+#workspaces button.urgent {
+    color: #b30000;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#mpd,
+#language {
+    padding: 0 10px;
+    background-color: #1a1a1a;
+    color: #808080;
+}
+
+#window,
+#workspaces {
+    margin: 0 0px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#pulseaudio.muted {
+    color: white;
+}
+
+#clock {
+    margin-right: 10px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #b30000;
+}
+
