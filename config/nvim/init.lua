@@ -1,0 +1,8 @@
+require "options"
+require "plugins"
+require "colorscheme"
+require "keymaps"
+require "treesitter"
+require "telescope"
+require "autocmd"
+require "zen"
