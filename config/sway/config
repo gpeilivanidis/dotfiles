@@ -1,0 +1,340 @@
+font pango: JetBrains Mono 16
+
+# set the mod key to the winkey:
+set $mod Mod4
+set $mod2 Mod1
+
+set $left h
+set $down j
+set $up k
+set $right l
+
+##########################################
+# workspace                              #
+##########################################
+
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+set $ws10 10
+
+# default i3 tiling mode:
+workspace_layout default
+
+# switch/iterate between workspaces
+bindsym $mod+Tab workspace next
+bindsym $mod2+Tab workspace prev
+
+# switch to workspace
+bindsym $mod+1    workspace  $ws1
+bindsym $mod+2    workspace  $ws2
+bindsym $mod+3    workspace  $ws3
+bindsym $mod+4    workspace  $ws4
+bindsym $mod+5    workspace  $ws5
+bindsym $mod+6    workspace  $ws6
+bindsym $mod+7    workspace  $ws7
+bindsym $mod+8    workspace  $ws8
+bindsym $mod+9    workspace  $ws9
+bindsym $mod+0    workspace  $ws10
+
+# switch to workspace with numpad keys
+bindcode $mod+87 workspace 1
+bindcode $mod+88 workspace 2
+bindcode $mod+89 workspace 3
+bindcode $mod+83 workspace 4
+bindcode $mod+84 workspace 5
+bindcode $mod+85 workspace 6
+bindcode $mod+79 workspace 7
+bindcode $mod+80 workspace 8
+bindcode $mod+81 workspace 9
+bindcode $mod+90 workspace 10
+
+# switch to workspace with numlock numpad keys
+bindcode $mod+Mod2+87 workspace $ws1
+bindcode $mod+Mod2+88 workspace $ws2
+bindcode $mod+Mod2+89 workspace $ws3
+bindcode $mod+Mod2+83 workspace $ws4
+bindcode $mod+Mod2+84 workspace $ws5
+bindcode $mod+Mod2+85 workspace $ws6
+bindcode $mod+Mod2+79 workspace $ws7
+bindcode $mod+Mod2+80 workspace $ws8
+bindcode $mod+Mod2+81 workspace $ws9
+bindcode $mod+Mod2+90 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod2+1    move container to workspace  $ws1
+bindsym $mod2+2    move container to workspace  $ws2
+bindsym $mod2+3    move container to workspace  $ws3
+bindsym $mod2+4    move container to workspace  $ws4
+bindsym $mod2+5    move container to workspace  $ws5
+bindsym $mod2+6    move container to workspace  $ws6
+bindsym $mod2+7    move container to workspace  $ws7
+bindsym $mod2+8    move container to workspace  $ws8
+bindsym $mod2+9    move container to workspace  $ws9
+bindsym $mod2+0    move container to workspace  $ws10
+
+# move focused container to workspace with numpad keys
+bindcode $mod2+Mod2+87 	move container to workspace  $ws1
+bindcode $mod2+Mod2+88 	move container to workspace  $ws2
+bindcode $mod2+Mod2+89 	move container to workspace  $ws3
+bindcode $mod2+Mod2+83 	move container to workspace  $ws4
+bindcode $mod2+Mod2+84 	move container to workspace  $ws5
+bindcode $mod2+Mod2+85 	move container to workspace  $ws6
+bindcode $mod2+Mod2+79 	move container to workspace  $ws7
+bindcode $mod2+Mod2+80 	move container to workspace  $ws8
+bindcode $mod2+Mod2+81 	move container to workspace  $ws9
+bindcode $mod2+Mod2+90 	move container to workspace  $ws10
+
+# move focused container to workspace with numpad keys
+bindcode $mod2+87 	 move container to workspace  $ws1
+bindcode $mod2+88 	 move container to workspace  $ws2
+bindcode $mod2+89 	 move container to workspace  $ws3
+bindcode $mod2+83 	 move container to workspace  $ws4
+bindcode $mod2+84 	 move container to workspace  $ws5
+bindcode $mod2+85 	 move container to workspace  $ws6
+bindcode $mod2+79 	 move container to workspace  $ws7
+bindcode $mod2+80 	 move container to workspace  $ws8
+bindcode $mod2+81 	 move container to workspace  $ws9
+bindcode $mod2+90 	 move container to workspace  $ws10
+
+##########################################
+# windows                                #
+##########################################
+
+#border indicator on windows:
+default_border pixel 0
+default_floating_border pixel 0
+
+# Set inner/outer gaps
+gaps inner 0
+gaps outer 0
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+#floating window size
+floating_minimum_size 400 x 400
+floating_maximum_size 1200 x 800
+
+# change focus
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod2+$left move left
+bindsym $mod2+$down move down
+bindsym $mod2+$up move up
+bindsym $mod2+$right move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod2+Left move left
+bindsym $mod2+Down move down
+bindsym $mod2+Up move up
+bindsym $mod2+Right move right
+
+# set floating (nontiling) for apps needing it
+for_window [class="Yad" instance="yad"] floating enable
+for_window [class="Galculator" instance="galculator"] floating enable
+for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
+
+# set floating (nontiling) for special apps
+for_window [class="Xsane" instance="xsane"] floating enable
+for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
+for_window [class="qt5ct" instance="qt5ct"] floating enable
+for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
+for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
+for_window [window_role="About"] floating enable
+
+# Define colors variables:
+set $black	        #0d0d0d
+set $lightgray		  #cccccc
+set $darkgray		    #808080
+set $white		      #ffffff
+set $alert		      #b30000
+
+# define colors for windows:
+#class		        	      border		  bground		  text		      indicator	    child_border
+client.focused		    	  $black	    $black	    $lightgray	  $black	      $black
+client.unfocused	    	  $black	    $black	    $darkgray	    $black	      $black
+client.focused_inactive		$black	    $black	    $darkgray	    $black		    $black
+client.urgent		    	    $black	    $black	    $alert		    $black	      $black
+
+hide_edge_borders both
+
+############################################
+#               bar settings               #
+############################################
+
+bar { 
+     swaybar_command waybar
+}
+
+######################################
+# system keybindings                 #
+######################################
+
+# kill focused window
+bindsym $mod2+q kill
+
+# exit-menu
+bindsym $mod2+e exec wlogout
+
+# restart sway 
+bindsym $mod2+r reload
+
+# toggle split horizontal/vertical 
+bindsym $mod+v split toggle
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# toggle tiling / floating
+bindsym $mod2+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+#resize mode
+bindsym $mod+r mode "resize"
+
+mode "resize" {
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym $left resize shrink width 10 ppt 
+        bindsym $down resize grow height 10 ppt 
+        bindsym $up resize shrink height 10 ppt
+        bindsym $right resize grow width 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Escape mode "default"
+        bindsym Return mode "default"
+        bindsym $mod+r mode "default"
+}
+
+#############################################
+# app shortcuts                             #
+#############################################
+
+# rofi
+bindsym $mod+d exec rofi -modi drun -show drun \
+		-config ~/.config/rofi/rofidmenu.rasi
+
+# terminal
+bindsym $mod+Return exec kitty
+
+# firefox
+bindsym $mod+g exec /usr/bin/librewolf
+
+# brave
+bindsym $mod+c exec /usr/bin/brave-browser
+
+# file explorer
+bindsym $mod+n exec /usr/bin/nemo
+
+# task manager
+bindsym $mod+t exec /usr/bin/gnome-system-monitor
+
+##########################################
+# Keyboard, multimedia and Touchpad      #
+##########################################
+
+# touchpad
+input 1739:52759:SYNA32AA:00_06CB:CE17_Touchpad {
+    left_handed disabled
+    tap enabled
+    natural_scroll enabled
+    dwt enabled
+    accel_profile "flat" # disable mouse acceleration (enabled by default; to set it manually, use "adaptive" instead of "flat")
+    pointer_accel 0.5 # set mouse sensitivity (between -1 and 1)
+}
+
+# language
+input "type:keyboard" {
+    xkb_layout us,gr
+    xkb_variant ,nodeadkeys
+    xkb_options grp:alt_shift_toggle
+}
+
+# num lock activated
+input type:keyboard xkb_numlock enabled
+
+# Backlight control
+bindsym XF86MonBrightnessUp exec brightnessctl -c backlight set +5%
+bindsym XF86MonBrightnessDown exec brightnessctl -c backlight set 5%-
+
+# gradular volume control
+bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ 
+bindsym XF86AudioLowerVolume exec amixer sset Master 5%- 
+
+# mute
+bindsym XF86AudioMute exec amixer sset Master toggle && killall -USR1 i3blocks
+
+# audio control
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# Redirect sound to headphones
+bindsym $mod+p exec /usr/local/bin/switch-audio-port
+
+# screenshot
+bindsym Print exec grim ~/pictures/screenshots/$(date +"%Y-%m-%d-%T")-screenshot.png && notify-send "Screenshot saved to ~/pictures/screenshots/$(date +"%Y-%m-%d-%T")-screenshot.png"
+
+#############################################
+# autostart applications/services on login: #
+#############################################
+
+exec --no=no-startup-id dex --autostart -e sway
+
+# start a script to setup displays
+# uncomment the next line, use arandr to setup displays and save the file as monitor:
+exec --no-startup-id ~/.screenlayout/monitor.sh
+
+#  wallpaper
+output * bg /home/g/pictures/αεσθετιξ/alone-together.jpg fill
+
+# Desktop notifications
+#exec --no-startup-id dunst --config ~/.config/dunst/dunstrc
+# may yneed to run dbus-launch explicitly: 
+#exec --no-startup-id dbus-launch dunst
+exec --no-startup-id mako --config ~/.config/mako/config
+
+
+#####################################
+# display, graphics, themes         #
+#####################################
+
+# theme, icons, cursor
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'gtk-murrine-engine'
+    gsettings set $gnome-schema icon-theme 'Papirus'
+    gsettings set $gnome-schema cursor-theme 'Bibata-Modern-Ice'
+}
+
+output * adaptive_sync on
+# exec nm-applet --indicator
+
+
